@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <div class="navbar p-0">
         <nav class="nav-extended indigo darken-2">
             <div class="nav-content">
                 <router-link :to="{name:'Index'}">
@@ -12,7 +12,7 @@
                 </a>
                 <a href="" class="btn-floating btn-large halfway-fab pink">
                     <router-link :to="{name:'AddSmoothie'}">
-                        <i class="material-icons">add</i>
+                        <i class="material-icons aa">add</i>
                     </router-link>
                 </a>
             </div>
@@ -34,5 +34,12 @@ export default {
 <style>
 .navbar nav{
     padding: 0 20px;
+}
+
+.navbar .nav-title:hover{
+    color: aliceblue !important;
+}
+.navbar i:hover{
+    background: #0056B3;
 }
 </style>

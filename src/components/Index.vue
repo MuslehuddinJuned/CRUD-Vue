@@ -1,21 +1,25 @@
 <template>
   <div class="index container">
-    <div class="card" v-for="smoothie in smoothies" :key="smoothie.id">
-      <div class="card-content">
-        <i class="material-icons delete" @click="deleteSmoothie(smoothie.id)">delete</i>
-        <h2 class="indigo-text">{{smoothie.title}}</h2>
-        <ul class="ingredient">
-          <li v-for="(ing, index) in smoothie.ingredients" :key="index">
-            <span class="chip">{{ing}}</span>
-          </li>
-        </ul>
+    <div class="row col-md-12">
+      <div class="col-md-4  p-2" v-for="smoothie in smoothies" :key="smoothie.id">
+        <div class="card">
+        <div class="card-content ">
+          <i class="material-icons delete" @click="deleteSmoothie(smoothie.id)">delete</i>
+          <h2 class="indigo-text">{{smoothie.title}}</h2>
+          <ul class="ingredient">
+            <li v-for="(ing, index) in smoothie.ingredients" :key="index">
+              <span class="chip">{{ing}}</span>
+            </li>
+          </ul>
 
+        </div>
+        <span class="btn-floating btn-large halfway-fab green">
+          <router-link :to="{name:'EditSmoothie', params: {smoothie_slug: smoothie.slug}}">
+            <i class="material-icons edit">edit</i>
+          </router-link>
+        </span>
+        </div>
       </div>
-      <span class="btn-floating btn-large halfway-fab green">
-        <router-link :to="{name:'EditSmoothie', params: {smoothie_slug: smoothie.slug}}">
-          <i class="material-icons edit">edit</i>
-        </router-link>
-      </span>
     </div>
   </div>
 </template>
@@ -62,10 +66,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .index{
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
-  margin-top: 60px;
+  margin-top: 60px; */
 }
 
 .index h2{

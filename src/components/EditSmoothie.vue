@@ -7,13 +7,14 @@
                 <input type="text" name="title" v-model="smoothie.title">
             </div>
             <div class="field ingredient" v-for="(ing, index) in smoothie.ingredients" :key="index">
-                <label for="ingredient">ingredient</label>
+                <label for="ingredient">Ingredient</label>
                 <input type="text" name="ingredient" v-model="smoothie.ingredients[index]">
                 <i class="material-icons delete" @click="deleteIng(ing)">delete</i>
             </div>
             <div class="field add-ingredient">
-                <label for="add-ingredient">Add an ingredient (Press tab to add more ingredients)</label>
-                <input type="text" name="add-ingredient" @keydown.tab.prevent="addIng" v-model="another">
+                <label for="add-ingredient">Add an ingredient</label>
+                <input type="text" name="add-ingredient" v-model="another">
+                <i class="material-icons delete" @click="addIng">add</i>
             </div>
             <div class="field center-align">
                 <p v-if="feedback" class="red-text">{{feedback}}</p>
